@@ -25,5 +25,7 @@ COPY --from=build /build/src/bin/Release/net6.0/publish/ .
 # Expose port 5000
 EXPOSE 5000
 
+ENV ASPNETCORE_FORWARDEDHEADERS_ENABLED=true
+
 # Run the ASP.NET Core app
 ENTRYPOINT dotnet dotnet-demoapp.dll
